@@ -1,14 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      TIMER APP
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <h1 text-center>Bem Vindo</h1>
+
+  <button ion-button block (click)="goToPage('NormalTimerPage')">NORMAL TIMER</button>
+
+  <button ion-button block (click)="goToPage('ObservableTimerPage')">RXJS OBSERVABLE TIMER</button>
+
+  <button ion-button block (click)="goToPage('DatePage')">DATE TIME</button>
+
+  <button ion-button block (click)="goToPage('TimerPage')">TIMER</button>
+
 </ion-content>

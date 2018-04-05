@@ -1,0 +1,84 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cronômetro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        
+        <ion-row>
+          <ion-col text-center>
+           Hora
+          </ion-col >
+          <ion-col text-center>
+            Minutos
+          </ion-col >
+          <ion-col text-center>
+           Segundos
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col text-center>
+              <ion-icon name="ios-arrow-dropup-outline" (click)="timerUp('hora')"></ion-icon>
+                <h2 text-center style="margin-top: 0px; margin-bottom: 0px;">{{hora}}</h2>
+              <ion-icon name="ios-arrow-dropdown-outline" (click)="timerDown('hora')"></ion-icon>
+            </ion-col>
+
+            <ion-col text-center>
+              <ion-icon name="ios-arrow-dropup-outline" (click)="timerUp('minuto')"></ion-icon>
+                <h2 text-center style="margin-top: 0px; margin-bottom: 0px;">{{minuto}}</h2>
+              <ion-icon name="ios-arrow-dropdown-outline" (click)="timerDown('minuto')"></ion-icon>
+            </ion-col>
+
+            <ion-col text-center>
+              <ion-icon name="ios-arrow-dropup-outline" (click)="timerUp('segundo')"></ion-icon>
+                <h2 text-center style="margin-top: 0px; margin-bottom: 0px;">{{segundo}}</h2>
+              <ion-icon name="ios-arrow-dropdown-outline" (click)="timerDown('segundo')"></ion-icon>
+            </ion-col>
+           
+          </ion-row>
+
+          <ion-row>
+            <ion-col text-center>
+              <button ion-button outline round small (click)="defineTimer('progressivo')">Progressivo</button>
+            </ion-col>
+            <ion-col text-center>
+              <button ion-button outline round small (click)="defineTimer('regressivo')">Regressivo</button>
+            </ion-col>
+          </ion-row>
+     
+      <ion-row>
+        <ion-col text-center>
+            <h1 text-center style="margin-top: 0px; margin-bottom: 0px; font-size: 60px">{{cronoHora}}</h1>
+        </ion-col>
+
+        <ion-col text-center>
+            <h1 text-center style="margin-top: 0px; margin-bottom: 0px; font-size: 60px">{{cronoMinuto}}'</h1>
+        </ion-col>
+
+        <ion-col text-center>
+            <h1 text-center style="margin-top: 0px; margin-bottom: 0px; font-size: 60px">{{cronoSegundo}}''</h1>
+        </ion-col>
+       
+      </ion-row>
+
+      <ion-row>
+       
+          <ion-col text-center>
+            <button ion-button outline round small [disabled]="!prepare || !pause" (click)="startTimer()">Iniciar</button>
+          </ion-col>
+          <ion-col text-center>
+            <button ion-button outline round small [disabled]="pause" (click)="pauseTimer()">Pausar</button>
+          </ion-col> 
+          <ion-col text-center>
+            <button ion-button outline round small [disabled]="!pause" (click)="resetTimer()">Resetar</button>
+          </ion-col> 
+      </ion-row>
+  </ion-grid>
+  
+</ion-content>
