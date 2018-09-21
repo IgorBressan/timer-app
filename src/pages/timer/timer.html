@@ -80,5 +80,14 @@
           </ion-col> 
       </ion-row>
   </ion-grid>
+
+  <div class="progress-wrapper">
+    <div class="current" [ngStyle]="getOverlayStyle()">{{ cronoMinuto }}:{{ cronoSegundo }}</div>
+  <round-progress 
+  [current]="cronoSegundo"
+  [max]="60"
+
+  ></round-progress>
+  </div>
   
 </ion-content>

@@ -9,6 +9,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TimerPage {
 
+  private semicircle: boolean = false;
+  private radius: number = 125;
+
   private hora:number = 0;
   private minuto:number = 0;
   private segundo:number = 0;
@@ -226,6 +229,21 @@ export class TimerPage {
       this.defineTimer('regressivo');
     }
 
+  }
+
+  getOverlayStyle() {
+    let isSemi = this.semicircle;
+    let transform = (isSemi ? '' : 'translateY(-50%) ') + 'translateX(-50%)';
+
+    return {
+      'top': isSemi ? 'auto' : '50%',
+      'bottom': isSemi ? '5%' : 'auto',
+      'left': '50%',
+      'transform': transform,
+      '-moz-transform': transform,
+      '-webkit-transform': transform,
+      'font-size': this.radius / 3.5 + 'px'
+    };
   }
   
 
